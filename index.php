@@ -21,11 +21,11 @@ session_start();
 <?php
 // Checken, ob eins der beiden Formulare mit der Methode "POST" gesendet wurde.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Anmeldeformular
+    // Wurde das Anmeldeformular gesendet?
     if (isset($_POST['login'])) {
 
         require 'login.php';
-        // Registrierungsformular
+        // Wurde das Registrierungsformular gesendet?
     } elseif (isset($_POST['register'])) {
 
         require 'register.php';

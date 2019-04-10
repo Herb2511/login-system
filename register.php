@@ -14,7 +14,7 @@ $password = $mysqli->escape_string(password_hash($_POST['password'], PASSWORD_BC
 $hash = $mysqli->escape_string(md5(rand(0, 1000)));
 
 // Checken, ob der User mit der E-Mail Adresse bereits existiert.
-$result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error());
+$result = $mysqli->query("SELECT * FROM users WHERE email='$email'") or die($mysqli->error);
 
 // Wir wissen, ob die User E-Mail Adresses bereits existiert, indem die Spalte > 0 ist.
 if ($result->num_rows > 0) {

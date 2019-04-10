@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Session Nachricht auf success.php anzeigen.
         $_SESSION['message'] = "<p>Please check your email <span>$email</span>"
-            . "for a confirmation link to complete your password reset</p>";
+            . " for a confirmation link to complete your password reset</p>";
 
         // Sendet Registrierungs Bestätigungslink (reset.php).
         $to = $email;
@@ -42,3 +42,40 @@ http://localhost/login-system/reset.php?email=' . $email . '&hash=' . $hash;
         header("location: success.php");
     }
 }
+?>
+<html>
+
+<head>
+    <title>Reset your Password</title>
+    <?php include 'css/styles.css'; ?>
+</head>
+
+<body>
+    <div class="form">
+
+        <div class="tab-content">
+            <!-- Anmelden -->
+            <div id="forgot">
+                <h1>Reset your Password</h1>
+
+                <form action="forgot.php" method="post" autocomplete="off">
+
+                    <div class="field-wrap">
+                        <label>
+                            Email Adress<span class="req">*</span>
+                        </label>
+                        <input type="email" required autocomplete="off" name="email" />
+                    </div>
+
+                    <button class="button button-block" name="reset">Reset</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
